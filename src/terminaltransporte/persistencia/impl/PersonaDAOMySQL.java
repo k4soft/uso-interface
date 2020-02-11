@@ -15,4 +15,9 @@ public class PersonaDAOMySQL implements PersonaDAO {
     public void insert(Persona persona) {
 
     }
+
+    @Override
+    public void findByDocumentoIdentidad(int id) {
+
+    }
 }

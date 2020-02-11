@@ -7,4 +7,6 @@ public interface PersonaDAO {
      Persona findById(String id);
 
      void insert(Persona persona);
+
+    void findByDocumentoIdentidad(int id);
 }

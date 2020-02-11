@@ -1,3 +1,4 @@
+import terminaltransporte.TipoDocumentoIdentidad;
 import terminaltransporte.entities.Persona;
 import terminaltransporte.persistencia.PersonaDAO;
 import terminaltransporte.persistencia.impl.PersonaDAOMySQL;
@@ -9,13 +10,16 @@ public class Main {
     public static void main(String[] args) {
 
 
-        PersonaDAO personaDAOPostgres = new PersonaDAOPostgres();
-        Persona persona = personaDAOPostgres.findById("1");
+        PersonaDAO personaDAO = new PersonaDAOPostgres();
+        String idPersona = "1";
+        Persona persona = personaDAO.findById(idPersona);
         if(persona == null){
             persona = new Persona();
             persona.setNombre("Fulanito");
-            personaDAOPostgres.insert(persona);
+            personaDAO.insert(persona);
         }
+        personaDAO.findByDocumentoIdentidad(TipoDocumentoIdentidad.CEDULA_CIUDADANIA.getId());
+
 
 
 
